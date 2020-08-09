@@ -1,0 +1,127 @@
+package implementation;
+
+import java.util.List;
+
+/**
+ * Array implementation of a multiset.  See comments in RmitMultiset to
+ * understand what each overriden method is meant to do.
+ *
+ * @author Jeffrey Chan & Yongli Ren, RMIT 2020
+ */
+public class ArrayMultiset extends RmitMultiset
+{
+
+    // String tokens referencing to the id of the array
+    // Not sure if arrary should be labelled tokens or id based on tester classes
+    protected String tokens[];
+
+    @Override
+	public void add(String elem) {
+        // Implement me!
+        // Implement me!
+        // Minimal array
+        // Check if we need to allocate memory
+        if(tokens == null){
+            // Allocate array of size 1
+            tokens = new String[1];
+            tokens[0] = elem;
+        }
+        else{
+            // increase size of array by one
+            String newArray[] = new String[tokens.length +1];
+
+            // copy all existing values of array to newArray
+            for(int i = 0; i < tokens.length; i++){
+                newArray[i] = tokens[i];
+            }
+
+            // new entry, add to end of newArray
+            newArray[tokens.length] = elem;
+
+            // update reference of array to point to newArray
+            tokens = newArray;
+            System.out.println("element has been added");
+        }
+    } // end of add()
+
+
+    @Override
+	public int search(String elem) {
+        // Implement me!
+
+        // Placeholder, please update.
+        return searchFailed;
+    } // end of search()
+
+
+    @Override
+    public List<String> searchByInstance(int instanceCount) {
+
+        // Placeholder, please update.
+        return null;
+    } // end of searchByInstance
+
+
+    @Override
+	public boolean contains(String elem) {
+        // Implement me!
+
+        // Placeholder, please update.
+        return false;
+    } // end of contains()
+
+
+    @Override
+	public void removeOne(String elem) {
+        // Implement me!
+    } // end of removeOne()
+
+
+    @Override
+	public String print() {
+
+        if (tokens != null) {
+            for (int i = 0; i < tokens.length; i++) {
+                System.out.print(tokens[i] + " ");
+            }
+        }
+
+        System.out.println("");
+
+        // Placeholder, please update.
+        return new String();
+    } // end of OrderedPrint
+
+
+    @Override
+	public String printRange(String lower, String upper) {
+
+        // Placeholder, please update.
+        return new String();
+    } // end of printRange()
+
+
+    @Override
+	public RmitMultiset union(RmitMultiset other) {
+
+        // Placeholder, please update.
+        return null;
+    } // end of union()
+
+
+    @Override
+	public RmitMultiset intersect(RmitMultiset other) {
+
+        // Placeholder, please update.
+        return null;
+    } // end of intersect()
+
+
+    @Override
+	public RmitMultiset difference(RmitMultiset other) {
+
+        // Placeholder, please update.
+        return null;
+    } // end of difference()
+
+} // end of class ArrayMultiset
